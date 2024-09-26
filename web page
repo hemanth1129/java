@@ -1,0 +1,11 @@
+import java.io.IOException;
+import org.kohsuke.github.GitHub;
+import org.kohsuke .github.GitHubBuilder;
+
+public class CreateGitHubRepository {
+    public static void main(String[] args) throws IOException {
+        GitHub github = new GitHubBuilder().withOAuthToken("YOUR_GITHUB_TOKEN", "YOUR_GITHUB_USERNAME").build();
+
+        github.createRepository("TestRepository", "This is a test repository", "https://github.com", true);
+    }
+}
